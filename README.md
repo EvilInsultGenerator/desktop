@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Evil Insult Generator Java Desktop App
 [![Build Status](https://travis-ci.org/EvilInsultGenerator/desktop.svg?branch=master)](https://travis-ci.org/EvilInsultGenerator/desktop)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/3915903845a64b94b228dd548dd028ac)](https://www.codacy.com/app/EvilInsultGenerator/desktop?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EvilInsultGenerator/desktop&amp;utm_campaign=Badge_Grade)
@@ -47,8 +46,3 @@ We love to get in touch with you. Feel welcome to email your questions and feedb
 ### Screenshots
 
 ![Evil Insult Generator Java Desktop App](https://cloud.githubusercontent.com/assets/23154819/19838934/65533278-9ed9-11e6-9d73-64597904f8b6.PNG)
-
-=======
-# desktop
-Evil Insult Generator Desktop
->>>>>>> 6c043b294eddfe52f2af5aa76d86fb529a4f78fa
