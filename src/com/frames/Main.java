@@ -115,7 +115,7 @@ public final class Main extends JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         javax.swing.JMenuItem jMenuItem2 = new javax.swing.JMenuItem();
         javax.swing.JMenuItem jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        javax.swing.JMenuItem jMenuItem4 = new javax.swing.JMenuItem();
         javax.swing.JMenu jMenu3 = new javax.swing.JMenu();
         javax.swing.JMenu jMenu4 = new javax.swing.JMenu();
         javax.swing.JMenu jMenu5 = new javax.swing.JMenu();
@@ -487,7 +487,6 @@ public final class Main extends JFrame {
     private javax.swing.JButton btnGenerate;
     private javax.swing.JComboBox cmbLanguage;
     javax.swing.JMenuItem jMenuItem1;
-    javax.swing.JMenuItem jMenuItem4;
     javax.swing.JPanel jPanel1;
     javax.swing.JScrollPane jScrollPane2;
     javax.swing.JPopupMenu.Separator jSeparator1;
