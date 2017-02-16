@@ -135,13 +135,13 @@ public final class Main extends JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         btnGenerate = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        javax.swing.JScrollPane jScrollPane2 = new javax.swing.JScrollPane();
         txtPaneShow = new javax.swing.JTextPane();
         cmbLanguage = new javax.swing.JComboBox();
         javax.swing.JMenuBar jMenuBar1 = new javax.swing.JMenuBar();
         javax.swing.JMenu jMenu1 = new javax.swing.JMenu();
         javax.swing.JMenu jMenu2 = new javax.swing.JMenu();
-        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        javax.swing.JPopupMenu.Separator jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenuItem1 = new javax.swing.JMenuItem();
         javax.swing.JMenuItem jMenuItem2 = new javax.swing.JMenuItem();
         javax.swing.JMenuItem jMenuItem3 = new javax.swing.JMenuItem();
@@ -488,8 +488,6 @@ public final class Main extends JFrame {
     private javax.swing.JComboBox cmbLanguage;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JTextPane txtPaneShow;
     // End of variables declaration                   
 }
