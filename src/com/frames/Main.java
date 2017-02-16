@@ -36,7 +36,6 @@ public final class Main extends JFrame {
     /**
      * Creates new form Main
      */
-    private String language;
     private static final DBConnection listLanguage = new DBConnection();
 
     /**
@@ -96,7 +95,7 @@ public final class Main extends JFrame {
 
     public void showWord() {
         try {
-
+            String language;
             Languages l;
             l = (Languages) cmbLanguage.getSelectedItem();
             language = l.getLang();
