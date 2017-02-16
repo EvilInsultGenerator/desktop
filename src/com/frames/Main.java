@@ -486,10 +486,10 @@ public final class Main extends JFrame {
     // Variables declaration - do not modify                     
     private javax.swing.JButton btnGenerate;
     private javax.swing.JComboBox cmbLanguage;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JPanel jPanel1;
+    javax.swing.JMenuItem jMenuItem1;
+    javax.swing.JPanel jPanel1;
     javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JPopupMenu.Separator jSeparator1;
+    javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JTextPane txtPaneShow;
     // End of variables declaration                   
 }
