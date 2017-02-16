@@ -434,8 +434,8 @@ public final class Main extends JFrame {
     }                                   
 
     private void jMenu5MouseClicked(MouseEvent evt) {                                    
-        evt.getID();
         String URL = "https://evilinsult.com/legal.html";
+        evt.getID();
         webPages(URL);
     }                                   
 
