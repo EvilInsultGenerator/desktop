@@ -36,14 +36,13 @@ public final class Main extends JFrame {
     /**
      * Creates new form Main
      */
-    private String language;
     private static final DBConnection listLanguage = new DBConnection();
 
     /**
-     *@main
+     * @main
      */
     public Main() {
-        
+
         initComponents();
         setLocationRelativeTo(this);
         this.setTitle("EVIL INSULT GENERATOR");
@@ -79,18 +78,36 @@ public final class Main extends JFrame {
     }
 
     /**
-     *@void
+     * @void
      */
     public void addCombobox() {
 
         try {
-              for (Languages l : listLanguage.listLanguages()) {
+            for (Languages l : listLanguage.listLanguages()) {
                 cmbLanguage.addItem(l);
             }
 
         } catch (RuntimeException e) {
             throw e;
         } catch (Exception e) {
+        }
+    }
+
+    public void showWord() {
+        try {
+            String language;
+            Languages l;
+            l = (Languages) cmbLanguage.getSelectedItem();
+            language = l.getLang();
+            Document doc = Jsoup.connect("http://evilinsult.com/generate_insult.php?lang=" + language).get();
+            Elements links = doc.select("body");
+            for (Element link : links) {
+                txtPaneShow.setText("\n" + link.text());
+            }
+        } catch (RuntimeException e) {
+            throw e;
+        } catch (Exception ex) {
+            txtPaneShow.setText("\n" + "Insult Outage! Please Check Your Internet Connection And Try Again In Three Minutes");
         }
     }
 
@@ -348,21 +365,8 @@ public final class Main extends JFrame {
     }// </editor-fold>                        
 
     private void btnGenerateActionPerformed(ActionEvent evt) {                                            
-        try {
-            evt.getID();
-            Languages l;
-            l = (Languages) cmbLanguage.getSelectedItem();
-            language = l.getLang();
-            Document doc = Jsoup.connect("http://evilinsult.com/generate_insult.php?lang=" + language).get();
-            Elements links = doc.select("body");
-            for (Element link : links) {
-                txtPaneShow.setText("\n" + link.text());
-            }
-        } catch (RuntimeException e) {
-            throw e;
-        } catch (Exception ex) {
-            txtPaneShow.setText("\n" + "Insult Outage! Please Check Your Internet Connection And Try Again In Three Minutes");
-        }
+        evt.getID();
+        showWord();
 
     }                                           
 
@@ -388,25 +392,8 @@ public final class Main extends JFrame {
     }                                       
 
     private void jMenu1MouseClicked(MouseEvent evt) {                                    
-        try {
-            evt.getID();
-            Languages l;
-            l = (Languages) cmbLanguage.getSelectedItem();
-            language = l.getLang();
-
-            Document doc = Jsoup.connect("http://evilinsult.com/generate_insult.php?lang=" + language).get();
-
-            Elements links = doc.select("body");
-            for (Element link : links) {
-
-                txtPaneShow.setText("\n" + link.text());
-
-            }
-        } catch (RuntimeException e) {
-            throw e;
-        } catch (Exception ex) {
-            txtPaneShow.setText("\n" + "Insult Outage! Please Check Your Internet Connection And Try Again In Three Minutes");
-        }
+        evt.getID();
+        showWord();
     }                                   
 
     private void jMenuItem2ActionPerformed(ActionEvent evt) {                                           
@@ -484,10 +471,10 @@ public final class Main extends JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
-          Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
+
         //</editor-fold>
 
         /* Create and display the form */
