@@ -40,8 +40,9 @@ public final class Main extends JFrame {
     /**
      * @main
      */
+  
+          
     public Main() {
-
         initComponents();
         setLocationRelativeTo(this);
         this.setTitle("EVIL INSULT GENERATOR");
