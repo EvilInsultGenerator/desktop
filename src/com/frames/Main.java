@@ -4,7 +4,6 @@ import com.dbc.DBConnection;
 import com.models.Languages;
 import java.awt.Desktop;
 import static java.awt.Desktop.getDesktop;
-import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
@@ -41,8 +40,9 @@ public final class Main extends JFrame {
     /**
      * @main
      */
+  
+          
     public Main() {
-
         initComponents();
         setLocationRelativeTo(this);
         this.setTitle("EVIL INSULT GENERATOR");
@@ -135,13 +135,13 @@ public final class Main extends JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         btnGenerate = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        javax.swing.JScrollPane jScrollPane2 = new javax.swing.JScrollPane();
         txtPaneShow = new javax.swing.JTextPane();
         cmbLanguage = new javax.swing.JComboBox();
         javax.swing.JMenuBar jMenuBar1 = new javax.swing.JMenuBar();
         javax.swing.JMenu jMenu1 = new javax.swing.JMenu();
         javax.swing.JMenu jMenu2 = new javax.swing.JMenu();
-        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        javax.swing.JPopupMenu.Separator jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenuItem1 = new javax.swing.JMenuItem();
         javax.swing.JMenuItem jMenuItem2 = new javax.swing.JMenuItem();
         javax.swing.JMenuItem jMenuItem3 = new javax.swing.JMenuItem();
@@ -381,10 +381,10 @@ public final class Main extends JFrame {
         jPanel1.add(btnGenerate);
 
         if (y != 503) {
-            Dimension dim = new Dimension(275, 21);
+            java.awt.Dimension dim = new java.awt.Dimension(275, 21);
             jMenuItem1.setPreferredSize(dim);
         } else {
-            Dimension dim = new Dimension(150, 21);
+            java.awt.Dimension dim = new java.awt.Dimension(150, 21);
             jMenuItem1.setPreferredSize(dim);
         }
 
@@ -486,10 +486,8 @@ public final class Main extends JFrame {
     // Variables declaration - do not modify                     
     private javax.swing.JButton btnGenerate;
     private javax.swing.JComboBox cmbLanguage;
-    javax.swing.JMenuItem jMenuItem1;
-    javax.swing.JPanel jPanel1;
-    javax.swing.JScrollPane jScrollPane2;
-    javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextPane txtPaneShow;
     // End of variables declaration                   
 }
