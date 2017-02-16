@@ -4,7 +4,6 @@ import com.dbc.DBConnection;
 import com.models.Languages;
 import java.awt.Desktop;
 import static java.awt.Desktop.getDesktop;
-import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
@@ -381,10 +380,10 @@ public final class Main extends JFrame {
         jPanel1.add(btnGenerate);
 
         if (y != 503) {
-            Dimension dim = new Dimension(275, 21);
+            java.awt.Dimension dim = new java.awt.Dimension(275, 21);
             jMenuItem1.setPreferredSize(dim);
         } else {
-            Dimension dim = new Dimension(150, 21);
+            java.awt.Dimension dim = new java.awt.Dimension(150, 21);
             jMenuItem1.setPreferredSize(dim);
         }
 
@@ -488,7 +487,7 @@ public final class Main extends JFrame {
     private javax.swing.JComboBox cmbLanguage;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
-    javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JTextPane txtPaneShow;
     // End of variables declaration                   
