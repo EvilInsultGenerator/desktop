@@ -3,9 +3,7 @@ package com.frames;
 import com.dbc.DBConnection;
 import com.models.Languages;
 import java.awt.Desktop;
-import javax.swing.*;
 import static java.awt.Desktop.getDesktop;
-import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
@@ -13,7 +11,12 @@ import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListCellRenderer;
+import javax.swing.JFrame;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
@@ -22,7 +25,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import java.util.logging.*;
 
 /**
  *
@@ -33,11 +35,14 @@ public final class Main extends JFrame {
     /**
      * Creates new form Main
      */
-    private String language;
-    private static DBConnection listLanguage = new DBConnection();
+    private static final DBConnection listLanguage = new DBConnection();
 
+    /**
+     * @main
+     */
+  
+          
     public Main() {
-        
         initComponents();
         setLocationRelativeTo(this);
         this.setTitle("EVIL INSULT GENERATOR");
@@ -72,10 +77,13 @@ public final class Main extends JFrame {
 
     }
 
+    /**
+     * @void
+     */
     public void addCombobox() {
 
         try {
-              for (Languages l : listLanguage.listLanguages()) {
+            for (Languages l : listLanguage.listLanguages()) {
                 cmbLanguage.addItem(l);
             }
 
@@ -85,6 +93,28 @@ public final class Main extends JFrame {
         }
     }
 
+    public void showWord() {
+        try {
+            String language;
+            Languages l;
+            l = (Languages) cmbLanguage.getSelectedItem();
+            language = l.getLang();
+            Document doc = Jsoup.connect("http://evilinsult.com/generate_insult.php?lang=" + language).get();
+            Elements links = doc.select("body");
+            for (Element link : links) {
+                txtPaneShow.setText("\n" + link.text());
+            }
+        } catch (RuntimeException e) {
+            throw e;
+        } catch (Exception ex) {
+            txtPaneShow.setText("\n" + "Insult Outage! Please Check Your Internet Connection And Try Again In Three Minutes");
+        }
+    }
+
+    /**
+     *
+     * @param URL
+     */
     public void webPages(String URL) {
 
         try {
@@ -105,13 +135,13 @@ public final class Main extends JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         btnGenerate = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        javax.swing.JScrollPane jScrollPane2 = new javax.swing.JScrollPane();
         txtPaneShow = new javax.swing.JTextPane();
         cmbLanguage = new javax.swing.JComboBox();
         javax.swing.JMenuBar jMenuBar1 = new javax.swing.JMenuBar();
         javax.swing.JMenu jMenu1 = new javax.swing.JMenu();
         javax.swing.JMenu jMenu2 = new javax.swing.JMenu();
-        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        javax.swing.JPopupMenu.Separator jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenuItem1 = new javax.swing.JMenuItem();
         javax.swing.JMenuItem jMenuItem2 = new javax.swing.JMenuItem();
         javax.swing.JMenuItem jMenuItem3 = new javax.swing.JMenuItem();
@@ -335,21 +365,8 @@ public final class Main extends JFrame {
     }// </editor-fold>                        
 
     private void btnGenerateActionPerformed(ActionEvent evt) {                                            
-        try {
-            evt.getID();
-            Languages l;
-            l = (Languages) cmbLanguage.getSelectedItem();
-            language = l.getLang();
-            Document doc = Jsoup.connect("http://evilinsult.com/generate_insult.php?lang=" + language).get();
-            Elements links = doc.select("body");
-            for (Element link : links) {
-                txtPaneShow.setText("\n" + link.text());
-            }
-        } catch (RuntimeException e) {
-            throw e;
-        } catch (Exception ex) {
-            txtPaneShow.setText("\n" + "Insult Outage! Please Check Your Internet Connection And Try Again In Three Minutes");
-        }
+        evt.getID();
+        showWord();
 
     }                                           
 
@@ -364,10 +381,10 @@ public final class Main extends JFrame {
         jPanel1.add(btnGenerate);
 
         if (y != 503) {
-            Dimension dim = new Dimension(275, 21);
+            java.awt.Dimension dim = new java.awt.Dimension(275, 21);
             jMenuItem1.setPreferredSize(dim);
         } else {
-            Dimension dim = new Dimension(150, 21);
+            java.awt.Dimension dim = new java.awt.Dimension(150, 21);
             jMenuItem1.setPreferredSize(dim);
         }
 
@@ -375,25 +392,8 @@ public final class Main extends JFrame {
     }                                       
 
     private void jMenu1MouseClicked(MouseEvent evt) {                                    
-        try {
-            evt.getID();
-            Languages l;
-            l = (Languages) cmbLanguage.getSelectedItem();
-            language = l.getLang();
-
-            Document doc = Jsoup.connect("http://evilinsult.com/generate_insult.php?lang=" + language).get();
-
-            Elements links = doc.select("body");
-            for (Element link : links) {
-
-                txtPaneShow.setText("\n" + link.text());
-
-            }
-        } catch (RuntimeException e) {
-            throw e;
-        } catch (Exception ex) {
-            txtPaneShow.setText("\n" + "Insult Outage! Please Check Your Internet Connection And Try Again In Three Minutes");
-        }
+        evt.getID();
+        showWord();
     }                                   
 
     private void jMenuItem2ActionPerformed(ActionEvent evt) {                                           
@@ -471,10 +471,10 @@ public final class Main extends JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
-          Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
+
         //</editor-fold>
 
         /* Create and display the form */
@@ -486,10 +486,8 @@ public final class Main extends JFrame {
     // Variables declaration - do not modify                     
     private javax.swing.JButton btnGenerate;
     private javax.swing.JComboBox cmbLanguage;
-    javax.swing.JMenuItem jMenuItem1;
-    javax.swing.JPanel jPanel1;
-    javax.swing.JScrollPane jScrollPane2;
-    javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextPane txtPaneShow;
     // End of variables declaration                   
 }
