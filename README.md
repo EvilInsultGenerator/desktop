@@ -1,6 +1,6 @@
 # Evil Insult Generator Java Desktop App
 [![Build Status](https://travis-ci.org/EvilInsultGenerator/desktop.svg?branch=master)](https://travis-ci.org/EvilInsultGenerator/desktop)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3915903845a64b94b228dd548dd028ac)](https://www.codacy.com/app/EvilInsultGenerator/desktop?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EvilInsultGenerator/desktop&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/198ac4f7dc814aaebd7c94d9ca6d8a00)](https://www.codacy.com/app/EvilInsultGenerator/desktop?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EvilInsultGenerator/desktop&amp;utm_campaign=Badge_Grade)
 [![Website](https://img.shields.io/website-up-down-green-red/https/shields.io.svg)](https://evilinsult.com)
 
 Evil Insult Generator's goal is to offer the most evil insults. Please help us to reach this honorable purpose by submitting insults via mail.
