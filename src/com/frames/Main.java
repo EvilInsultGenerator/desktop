@@ -364,7 +364,6 @@ public final class Main extends JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnGenerateActionPerformed(ActionEvent evt) {//GEN-FIRST:event_btnGenerateActionPerformed
         evt.getID();
         showWord();
 
@@ -387,14 +386,6 @@ public final class Main extends JFrame {
             java.awt.Dimension dim = new java.awt.Dimension(150, 21);
             jMenuItem1.setPreferredSize(dim);
         }
-
-
-    }//GEN-LAST:event_formWindowStateChanged
-
-    private void jMenu1MouseClicked(MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
-        evt.getID();
-        showWord();
-    }//GEN-LAST:event_jMenu1MouseClicked
 
     private void jMenuItem2ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         evt.getID();
